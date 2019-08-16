@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+        <generatorConfiguration>
+            <!-- ojdbc6.jar已经直接放到项目中,无需指定了,同时mysql驱动包也一样,这里同样无需指定 -->
+            <classPathEntry location="D:\card\osg-main\uaplib\ojdbc8.jar" />
+            <context id="context" targetRuntime="MyBatis3">
+                <!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+                <property name="javaFileEncoding" value="UTF-8" />
+                <!-- 这里的type里写的是你的实现类的类全路径 -->
+                <commentGenerator type="com.sgcc.utils.mybatis.MyCommentGenerator">
+                </commentGenerator>
+
+
+                <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                connectionURL="jdbc:oracle:thin:@30.20.109.97:11521:webdb"
+                userId="osgpc" password="osgpc">
+                <!-- 针对oracle数据库 -->
+                    <property name="remarksReporting" value="true"></property>
+                </jdbcConnection>
+
+
+
+
+                <!-- mysql配置 -->
+                <!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver。" connectionURL="jdbc:mysql://localhost:3306/bookshop"?
+                    userId="root" password="root"> 针对mysql数据库 <property name="useInformationSchema"?
+                    value="true"></property> </jdbcConnection> -->
+
+
+                <javaTypeResolver>
+                    <property name="forceBigDecimals" value="false" />
+                </javaTypeResolver>
+                <!-- 下面几个的 targetProject都要改 -->
+                <javaModelGenerator targetPackage="com.sgcc.entity"
+                targetProject="break-point_test/src/main/java">
+                    <property name="enableSubPackages" value="true" />
+                    <property name="trimStrings" value="true" />
+                </javaModelGenerator>
+
+
+                <sqlMapGenerator targetPackage="mapper"
+                targetProject="break-point_test/src/main/resources">
+                    <property name="enableSubPackages" value="true" />
+                </sqlMapGenerator>
+
+
+                <javaClientGenerator type="XMLMAPPER" targetPackage="com.sgcc.mapper" targetProject="break-point_test/src/main/java">
+                    <property name="enableSubPackages" value="true" />
+                </javaClientGenerator>
+
+
+                <!-- 重新生成 要改这里2 -->
+                <table tableName="JY_RECHARGE_REG_MAIN" domainObjectName="JyRechargeRegMain" enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+                    <!-- 驼峰命名? ? ?数据库字段要加_(下划线) -->
+                    <property name="useActualColumnNames" value="false" />
+                    <!-- <property name="mapUnderscoreToCamelCase" value="true" /> -->
+                    <!--不加下划线就改名字? -->
+                    <!-- <columnOverride column="username" property="userName"></columnOverride>-->
+                    <!-- number类型会转成bigcimal类型? ? ? 自定义转成integer -->
+                    <!--<columnOverride column="delflag" javaType="java.lang.Integer"></columnOverride> -->
+                </table>
+
+            </context>
+        </generatorConfiguration>

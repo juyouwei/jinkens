@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sgcc.order.mapper.JyRechargeRegMainMapper" >
+  <resultMap id="BaseResultMap" type="com.sgcc.order.entity.JyRechargeRegMain" >
+    <id column="SYS_ID" property="sysId"  />
+    <result column="ELECUSTOMER_NO" property="elecustomerNo"  />
+    <result column="REQ_TIME" property="reqTime"  />
+    <result column="PROV_CODE" property="provCode"  />
+    <result column="USER_IDENTIFICATION" property="userIdentification"  />
+    <result column="TOTAL_AMONT" property="totalAmont"  />
+    <result column="POWER_COMPANY_CODE" property="powerCompanyCode"  />
+    <result column="POWER_COMPANY_NM" property="powerCompanyNm"  />
+    <result column="USER_NAME" property="userName"  />
+    <result column="USER_ADDR" property="userAddr"  />
+    <result column="STATE" property="state"  />
+    <result column="UPDATE_TIME" property="updateTime"  />
+    <result column="ORDER_ID" property="orderId"  />
+    <result column="CHECK_STATE" property="checkState"  />
+    <result column="REASON" property="reason"  />
+    <result column="CZK_CHECK_DESCRIPTION" property="czkCheckDescription"  />
+    <result column="CZK_SYS_ID" property="czkSysId"  />
+    <result column="IS_CHECK" property="isCheck"  />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SYS_ID, ELECUSTOMER_NO, REQ_TIME, PROV_CODE, USER_IDENTIFICATION, TOTAL_AMONT, POWER_COMPANY_CODE, 
+    POWER_COMPANY_NM, USER_NAME, USER_ADDR, STATE, UPDATE_TIME, ORDER_ID, CHECK_STATE, 
+    REASON, CZK_CHECK_DESCRIPTION, CZK_SYS_ID, IS_CHECK
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from JY_RECHARGE_REG_MAIN
+    where SYS_ID = #{sysId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from JY_RECHARGE_REG_MAIN
+    where SYS_ID = #{sysId}
+  </delete>
+  <insert id="insert" parameterType="com.sgcc.order.entity.JyRechargeRegMain" >
+    insert into JY_RECHARGE_REG_MAIN (SYS_ID, ELECUSTOMER_NO, REQ_TIME, 
+      PROV_CODE, USER_IDENTIFICATION, TOTAL_AMONT, 
+      POWER_COMPANY_CODE, POWER_COMPANY_NM, USER_NAME, 
+      USER_ADDR, STATE, UPDATE_TIME, 
+      ORDER_ID, CHECK_STATE, REASON, 
+      CZK_CHECK_DESCRIPTION, CZK_SYS_ID, IS_CHECK
+      )
+    values (#{sysId}, #{elecustomerNo}, #{reqTime}, 
+      #{provCode}, #{userIdentification}, #{totalAmont}, 
+      #{powerCompanyCode}, #{powerCompanyNm}, #{userName}, 
+      #{userAddr}, #{state}, #{updateTime}, 
+      #{orderId}, #{checkState}, #{reason}, 
+      #{czkCheckDescription}, #{czkSysId}, #{isCheck}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sgcc.order.entity.JyRechargeRegMain" >
+    insert into JY_RECHARGE_REG_MAIN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sysId != null" >
+        SYS_ID,
+      </if>
+      <if test="elecustomerNo != null" >
+        ELECUSTOMER_NO,
+      </if>
+      <if test="reqTime != null" >
+        REQ_TIME,
+      </if>
+      <if test="provCode != null" >
+        PROV_CODE,
+      </if>
+      <if test="userIdentification != null" >
+        USER_IDENTIFICATION,
+      </if>
+      <if test="totalAmont != null" >
+        TOTAL_AMONT,
+      </if>
+      <if test="powerCompanyCode != null" >
+        POWER_COMPANY_CODE,
+      </if>
+      <if test="powerCompanyNm != null" >
+        POWER_COMPANY_NM,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="userAddr != null" >
+        USER_ADDR,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="orderId != null" >
+        ORDER_ID,
+      </if>
+      <if test="checkState != null" >
+        CHECK_STATE,
+      </if>
+      <if test="reason != null" >
+        REASON,
+      </if>
+      <if test="czkCheckDescription != null" >
+        CZK_CHECK_DESCRIPTION,
+      </if>
+      <if test="czkSysId != null" >
+        CZK_SYS_ID,
+      </if>
+      <if test="isCheck != null" >
+        IS_CHECK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sysId != null" >
+        #{sysId},
+      </if>
+      <if test="elecustomerNo != null" >
+        #{elecustomerNo},
+      </if>
+      <if test="reqTime != null" >
+        #{reqTime},
+      </if>
+      <if test="provCode != null" >
+        #{provCode},
+      </if>
+      <if test="userIdentification != null" >
+        #{userIdentification},
+      </if>
+      <if test="totalAmont != null" >
+        #{totalAmont},
+      </if>
+      <if test="powerCompanyCode != null" >
+        #{powerCompanyCode},
+      </if>
+      <if test="powerCompanyNm != null" >
+        #{powerCompanyNm},
+      </if>
+      <if test="userName != null" >
+        #{userName},
+      </if>
+      <if test="userAddr != null" >
+        #{userAddr},
+      </if>
+      <if test="state != null" >
+        #{state},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime},
+      </if>
+      <if test="orderId != null" >
+        #{orderId},
+      </if>
+      <if test="checkState != null" >
+        #{checkState},
+      </if>
+      <if test="reason != null" >
+        #{reason},
+      </if>
+      <if test="czkCheckDescription != null" >
+        #{czkCheckDescription},
+      </if>
+      <if test="czkSysId != null" >
+        #{czkSysId},
+      </if>
+      <if test="isCheck != null" >
+        #{isCheck},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sgcc.order.entity.JyRechargeRegMain" >
+    update JY_RECHARGE_REG_MAIN
+    <set >
+      <if test="elecustomerNo != null" >
+        ELECUSTOMER_NO = #{elecustomerNo},
+      </if>
+      <if test="reqTime != null" >
+        REQ_TIME = #{reqTime},
+      </if>
+      <if test="provCode != null" >
+        PROV_CODE = #{provCode},
+      </if>
+      <if test="userIdentification != null" >
+        USER_IDENTIFICATION = #{userIdentification},
+      </if>
+      <if test="totalAmont != null" >
+        TOTAL_AMONT = #{totalAmont},
+      </if>
+      <if test="powerCompanyCode != null" >
+        POWER_COMPANY_CODE = #{powerCompanyCode},
+      </if>
+      <if test="powerCompanyNm != null" >
+        POWER_COMPANY_NM = #{powerCompanyNm},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName},
+      </if>
+      <if test="userAddr != null" >
+        USER_ADDR = #{userAddr},
+      </if>
+      <if test="state != null" >
+        STATE = #{state},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime},
+      </if>
+      <if test="orderId != null" >
+        ORDER_ID = #{orderId},
+      </if>
+      <if test="checkState != null" >
+        CHECK_STATE = #{checkState},
+      </if>
+      <if test="reason != null" >
+        REASON = #{reason},
+      </if>
+      <if test="czkCheckDescription != null" >
+        CZK_CHECK_DESCRIPTION = #{czkCheckDescription},
+      </if>
+      <if test="czkSysId != null" >
+        CZK_SYS_ID = #{czkSysId},
+      </if>
+      <if test="isCheck != null" >
+        IS_CHECK = #{isCheck},
+      </if>
+    </set>
+    where SYS_ID = #{sysId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sgcc.order.entity.JyRechargeRegMain" >
+    update JY_RECHARGE_REG_MAIN
+    set ELECUSTOMER_NO = #{elecustomerNo},
+      REQ_TIME = #{reqTime},
+      PROV_CODE = #{provCode},
+      USER_IDENTIFICATION = #{userIdentification},
+      TOTAL_AMONT = #{totalAmont},
+      POWER_COMPANY_CODE = #{powerCompanyCode},
+      POWER_COMPANY_NM = #{powerCompanyNm},
+      USER_NAME = #{userName},
+      USER_ADDR = #{userAddr},
+      STATE = #{state},
+      UPDATE_TIME = #{updateTime},
+      ORDER_ID = #{orderId},
+      CHECK_STATE = #{checkState},
+      REASON = #{reason},
+      CZK_CHECK_DESCRIPTION = #{czkCheckDescription},
+      CZK_SYS_ID = #{czkSysId},
+      IS_CHECK = #{isCheck}
+    where SYS_ID = #{sysId}
+  </update>
+</mapper>

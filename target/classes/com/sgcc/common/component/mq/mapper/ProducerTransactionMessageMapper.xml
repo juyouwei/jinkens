@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sgcc.common.component.mq.mapper.ProducerTransactionMessageMapper" >
+  <resultMap id="BaseResultMap" type="com.sgcc.common.component.mq.ProducerTransactionMessage" >
+    <result column="MESSSAGE_ID" property="messsageId" jdbcType="VARCHAR" />
+    <result column="BODY" property="body" jdbcType="VARCHAR" />
+    <result column="MESSAGE_STATUS" property="messageStatus" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="SEND_TIME" property="sendTime" jdbcType="VARCHAR" />
+    <result column="TOPIC" property="topic" jdbcType="VARCHAR" />
+    <result column="TAG" property="tag" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sgcc.common.component.mq.ProducerTransactionMessage" >
+    insert into PRODUCER_TRANSACTION_MESSAGE (MESSSAGE_ID, BODY, MESSAGE_STATUS, 
+      UPDATE_TIME, CREATE_TIME, SEND_TIME, 
+      TOPIC, TAG)
+    values (#{messsageId,jdbcType=VARCHAR}, #{body,jdbcType=VARCHAR}, #{messageStatus,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{sendTime,jdbcType=VARCHAR}, 
+      #{topic,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sgcc.common.component.mq.ProducerTransactionMessage" >
+    insert into PRODUCER_TRANSACTION_MESSAGE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="messsageId != null" >
+        MESSSAGE_ID,
+      </if>
+      <if test="body != null" >
+        BODY,
+      </if>
+      <if test="messageStatus != null" >
+        MESSAGE_STATUS,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="sendTime != null" >
+        SEND_TIME,
+      </if>
+      <if test="topic != null" >
+        TOPIC,
+      </if>
+      <if test="tag != null" >
+        TAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="messsageId != null" >
+        #{messsageId,jdbcType=VARCHAR},
+      </if>
+      <if test="body != null" >
+        #{body,jdbcType=VARCHAR},
+      </if>
+      <if test="messageStatus != null" >
+        #{messageStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=VARCHAR},
+      </if>
+      <if test="topic != null" >
+        #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null" >
+        #{tag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

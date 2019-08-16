@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sgcc.mapper.jyRechargeMapper" >
+  <resultMap id="BaseResultMap" type="com.sgcc.entity.jyRecharge" >
+    <id column="SYS_ID" property="sysId" jdbcType="VARCHAR" />
+    <result column="ELECUSTOMER_NO" property="elecustomerNo" jdbcType="VARCHAR" />
+    <result column="CARD_NO" property="cardNo" jdbcType="VARCHAR" />
+    <result column="CARD_PASSWORD" property="cardPassword" jdbcType="VARCHAR" />
+    <result column="REQ_TIME" property="reqTime" jdbcType="VARCHAR" />
+    <result column="PROV_CODE" property="provCode" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="TOTAL_AMONT" property="totalAmont" jdbcType="NUMERIC" />
+    <result column="POWER_COMPANY_CODE" property="powerCompanyCode" jdbcType="VARCHAR" />
+    <result column="POWER_COMPANY_NM" property="powerCompanyNm" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="USER_ADDR" property="userAddr" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="VARCHAR" />
+    <result column="RESULT_DESCRIPTION" property="resultDescription" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SYS_ID, ELECUSTOMER_NO, CARD_NO, CARD_PASSWORD, REQ_TIME, PROV_CODE, MOBILE, TOTAL_AMONT, 
+    POWER_COMPANY_CODE, POWER_COMPANY_NM, USER_NAME, USER_ADDR, STATE, UPDATE_TIME, RESULT_DESCRIPTION
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from JY_RECHARGE
+    where SYS_ID = #{sysId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from JY_RECHARGE
+    where SYS_ID = #{sysId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sgcc.entity.jyRecharge" >
+    insert into JY_RECHARGE (SYS_ID, ELECUSTOMER_NO, CARD_NO, 
+      CARD_PASSWORD, REQ_TIME, PROV_CODE, 
+      MOBILE, TOTAL_AMONT, POWER_COMPANY_CODE, 
+      POWER_COMPANY_NM, USER_NAME, USER_ADDR, 
+      STATE, UPDATE_TIME, RESULT_DESCRIPTION
+      )
+    values (#{sysId,jdbcType=VARCHAR}, #{elecustomerNo,jdbcType=VARCHAR}, #{cardNo,jdbcType=VARCHAR}, 
+      #{cardPassword,jdbcType=VARCHAR}, #{reqTime,jdbcType=VARCHAR}, #{provCode,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{totalAmont,jdbcType=NUMERIC}, #{powerCompanyCode,jdbcType=VARCHAR}, 
+      #{powerCompanyNm,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userAddr,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, #{resultDescription,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sgcc.entity.jyRecharge" >
+    insert into JY_RECHARGE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sysId != null" >
+        SYS_ID,
+      </if>
+      <if test="elecustomerNo != null" >
+        ELECUSTOMER_NO,
+      </if>
+      <if test="cardNo != null" >
+        CARD_NO,
+      </if>
+      <if test="cardPassword != null" >
+        CARD_PASSWORD,
+      </if>
+      <if test="reqTime != null" >
+        REQ_TIME,
+      </if>
+      <if test="provCode != null" >
+        PROV_CODE,
+      </if>
+      <if test="mobile != null" >
+        MOBILE,
+      </if>
+      <if test="totalAmont != null" >
+        TOTAL_AMONT,
+      </if>
+      <if test="powerCompanyCode != null" >
+        POWER_COMPANY_CODE,
+      </if>
+      <if test="powerCompanyNm != null" >
+        POWER_COMPANY_NM,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="userAddr != null" >
+        USER_ADDR,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="resultDescription != null" >
+        RESULT_DESCRIPTION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sysId != null" >
+        #{sysId,jdbcType=VARCHAR},
+      </if>
+      <if test="elecustomerNo != null" >
+        #{elecustomerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNo != null" >
+        #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPassword != null" >
+        #{cardPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="reqTime != null" >
+        #{reqTime,jdbcType=VARCHAR},
+      </if>
+      <if test="provCode != null" >
+        #{provCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmont != null" >
+        #{totalAmont,jdbcType=NUMERIC},
+      </if>
+      <if test="powerCompanyCode != null" >
+        #{powerCompanyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="powerCompanyNm != null" >
+        #{powerCompanyNm,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddr != null" >
+        #{userAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="resultDescription != null" >
+        #{resultDescription,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sgcc.entity.jyRecharge" >
+    update JY_RECHARGE
+    <set >
+      <if test="elecustomerNo != null" >
+        ELECUSTOMER_NO = #{elecustomerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNo != null" >
+        CARD_NO = #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPassword != null" >
+        CARD_PASSWORD = #{cardPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="reqTime != null" >
+        REQ_TIME = #{reqTime,jdbcType=VARCHAR},
+      </if>
+      <if test="provCode != null" >
+        PROV_CODE = #{provCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmont != null" >
+        TOTAL_AMONT = #{totalAmont,jdbcType=NUMERIC},
+      </if>
+      <if test="powerCompanyCode != null" >
+        POWER_COMPANY_CODE = #{powerCompanyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="powerCompanyNm != null" >
+        POWER_COMPANY_NM = #{powerCompanyNm,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddr != null" >
+        USER_ADDR = #{userAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="resultDescription != null" >
+        RESULT_DESCRIPTION = #{resultDescription,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SYS_ID = #{sysId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sgcc.entity.jyRecharge" >
+    update JY_RECHARGE
+    set ELECUSTOMER_NO = #{elecustomerNo,jdbcType=VARCHAR},
+      CARD_NO = #{cardNo,jdbcType=VARCHAR},
+      CARD_PASSWORD = #{cardPassword,jdbcType=VARCHAR},
+      REQ_TIME = #{reqTime,jdbcType=VARCHAR},
+      PROV_CODE = #{provCode,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      TOTAL_AMONT = #{totalAmont,jdbcType=NUMERIC},
+      POWER_COMPANY_CODE = #{powerCompanyCode,jdbcType=VARCHAR},
+      POWER_COMPANY_NM = #{powerCompanyNm,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      USER_ADDR = #{userAddr,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=VARCHAR},
+      RESULT_DESCRIPTION = #{resultDescription,jdbcType=VARCHAR}
+    where SYS_ID = #{sysId,jdbcType=VARCHAR}
+  </update>
+</mapper>

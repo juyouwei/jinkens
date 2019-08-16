@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgcc.order.mapper.SaleOrderMapper">
+  <resultMap id="BaseResultMap" type="com.sgcc.order.entity.SaleOrder" >
+    <id column="SALE_ID" property="saleId"  />
+    <result column="CHANNEL_CODE" property="channelCode"  />
+    <result column="CHANNEL_NAME" property="channelName"  />
+    <result column="ORDER_AMOUNT" property="orderAmount"  />
+    <result column="POINTS_AMOUNT" property="pointsAmount"  />
+    <result column="COUPON_AMOUNT" property="couponAmount"  />
+    <result column="WALLET_AMOUNT" property="walletAmount"  />
+    <result column="POWER_WALDUC_AMOUNT" property="powerWalducAmount"  />
+    <result column="PAY_AMOUNT" property="payAmount" />
+    <result column="SHIP_STATUS" property="shipStatus"  />
+    <result column="ORDER_STATUS" property="orderStatus"  />
+    <result column="PAY_STATUS" property="payStatus"  />
+    <result column="PAY_ORDER_ID" property="payOrderId" />
+    <result column="CREATE_TIME" property="createTime"  />
+    <result column="USER_ID" property="userId" />
+    <result column="USER_TYPE" property="userType" />
+    <result column="CHK_STAT" property="chkStat"  />
+    <result column="SALE_RTN_NO" property="saleRtnNo" />
+    <result column="COMPLETE_TIME" property="completeTime"  />
+    <result column="PAY_COM_STIME" property="payComStime" />
+    <result column="TICKET_NUM" property="ticketNum"  />
+    <result column="UPDATE_TIME" property="updateTime"  />
+    <result column="SALE_PAY_ID" property="salePayId"  />
+    <result column="UN_BILL_DETAIL_ID" property="unBillDetailId"  />
+    <result column="CLOSE_TIME" property="closeTime" />
+    <result column="RECHARGE_AMOUNT" property="rechargeAmount"  />
+    <result column="POINTS_NUM" property="pointsNum"/>
+    <result column="GOODS_CODE" property="goodsCode"  />
+    <result column="REDUCE_AMOUNT" property="reduceAmount" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SALE_ID, CHANNEL_CODE, CHANNEL_NAME, ORDER_AMOUNT, POINTS_AMOUNT, COUPON_AMOUNT, 
+    WALLET_AMOUNT, POWER_WALDUC_AMOUNT, PAY_AMOUNT, SHIP_STATUS, ORDER_STATUS, PAY_STATUS, 
+    PAY_ORDER_ID, CREATE_TIME, USER_ID, USER_TYPE, CHK_STAT, SALE_RTN_NO, COMPLETE_TIME, 
+    PAY_COM_STIME, TICKET_NUM, UPDATE_TIME, SALE_PAY_ID, UN_BILL_DETAIL_ID, CLOSE_TIME, 
+    RECHARGE_AMOUNT, POINTS_NUM, GOODS_CODE, REDUCE_AMOUNT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from SALE_ORDER
+    where SALE_ID = #{saleId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SALE_ORDER
+    where SALE_ID = #{saleId}
+  </delete>
+  <insert id="insert" parameterType="com.sgcc.order.entity.SaleOrder" >
+    insert into SALE_ORDER (SALE_ID, CHANNEL_CODE, CHANNEL_NAME, 
+      ORDER_AMOUNT, POINTS_AMOUNT, COUPON_AMOUNT, 
+      WALLET_AMOUNT, POWER_WALDUC_AMOUNT, PAY_AMOUNT, 
+      SHIP_STATUS, ORDER_STATUS, PAY_STATUS, 
+      PAY_ORDER_ID, CREATE_TIME, USER_ID, 
+      USER_TYPE, CHK_STAT, SALE_RTN_NO, 
+      COMPLETE_TIME, PAY_COM_STIME, TICKET_NUM, 
+      UPDATE_TIME, SALE_PAY_ID, UN_BILL_DETAIL_ID, 
+      CLOSE_TIME, RECHARGE_AMOUNT, POINTS_NUM, 
+      GOODS_CODE, REDUCE_AMOUNT)
+    values (#{saleId}, #{channelCode}, #{channelName}, 
+      #{orderAmount}, #{pointsAmount}, #{couponAmount}, 
+      #{walletAmount}, #{powerWalducAmount}, #{payAmount}, 
+      #{shipStatus}, #{orderStatus}, #{payStatus}, 
+      #{payOrderId}, #{createTime}, #{userId}, 
+      #{userType}, #{chkStat}, #{saleRtnNo}, 
+      #{completeTime}, #{payComStime}, #{ticketNum}, 
+      #{updateTime}, #{salePayId}, #{unBillDetailId}, 
+      #{closeTime}, #{rechargeAmount}, #{pointsNum}, 
+      #{goodsCode}, #{reduceAmount})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sgcc.order.entity.SaleOrder" >
+    insert into SALE_ORDER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="saleId != null" >
+        SALE_ID,
+      </if>
+      <if test="channelCode != null" >
+        CHANNEL_CODE,
+      </if>
+      <if test="channelName != null" >
+        CHANNEL_NAME,
+      </if>
+      <if test="orderAmount != null" >
+        ORDER_AMOUNT,
+      </if>
+      <if test="pointsAmount != null" >
+        POINTS_AMOUNT,
+      </if>
+      <if test="couponAmount != null" >
+        COUPON_AMOUNT,
+      </if>
+      <if test="walletAmount != null" >
+        WALLET_AMOUNT,
+      </if>
+      <if test="powerWalducAmount != null" >
+        POWER_WALDUC_AMOUNT,
+      </if>
+      <if test="payAmount != null" >
+        PAY_AMOUNT,
+      </if>
+      <if test="shipStatus != null" >
+        SHIP_STATUS,
+      </if>
+      <if test="orderStatus != null" >
+        ORDER_STATUS,
+      </if>
+      <if test="payStatus != null" >
+        PAY_STATUS,
+      </if>
+      <if test="payOrderId != null" >
+        PAY_ORDER_ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="userType != null" >
+        USER_TYPE,
+      </if>
+      <if test="chkStat != null" >
+        CHK_STAT,
+      </if>
+      <if test="saleRtnNo != null" >
+        SALE_RTN_NO,
+      </if>
+      <if test="completeTime != null" >
+        COMPLETE_TIME,
+      </if>
+      <if test="payComStime != null" >
+        PAY_COM_STIME,
+      </if>
+      <if test="ticketNum != null" >
+        TICKET_NUM,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="salePayId != null" >
+        SALE_PAY_ID,
+      </if>
+      <if test="unBillDetailId != null" >
+        UN_BILL_DETAIL_ID,
+      </if>
+      <if test="closeTime != null" >
+        CLOSE_TIME,
+      </if>
+      <if test="rechargeAmount != null" >
+        RECHARGE_AMOUNT,
+      </if>
+      <if test="pointsNum != null" >
+        POINTS_NUM,
+      </if>
+      <if test="goodsCode != null" >
+        GOODS_CODE,
+      </if>
+      <if test="reduceAmount != null" >
+        REDUCE_AMOUNT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="saleId != null" >
+        #{saleId},
+      </if>
+      <if test="channelCode != null" >
+        #{channelCode},
+      </if>
+      <if test="channelName != null" >
+        #{channelName},
+      </if>
+      <if test="orderAmount != null" >
+        #{orderAmount},
+      </if>
+      <if test="pointsAmount != null" >
+        #{pointsAmount},
+      </if>
+      <if test="couponAmount != null" >
+        #{couponAmount},
+      </if>
+      <if test="walletAmount != null" >
+        #{walletAmount},
+      </if>
+      <if test="powerWalducAmount != null" >
+        #{powerWalducAmount},
+      </if>
+      <if test="payAmount != null" >
+        #{payAmount},
+      </if>
+      <if test="shipStatus != null" >
+        #{shipStatus},
+      </if>
+      <if test="orderStatus != null" >
+        #{orderStatus},
+      </if>
+      <if test="payStatus != null" >
+        #{payStatus},
+      </if>
+      <if test="payOrderId != null" >
+        #{payOrderId},
+      </if>
+      <if test="createTime != null" >
+        #{createTime},
+      </if>
+      <if test="userId != null" >
+        #{userId},
+      </if>
+      <if test="userType != null" >
+        #{userType},
+      </if>
+      <if test="chkStat != null" >
+        #{chkStat},
+      </if>
+      <if test="saleRtnNo != null" >
+        #{saleRtnNo},
+      </if>
+      <if test="completeTime != null" >
+        #{completeTime},
+      </if>
+      <if test="payComStime != null" >
+        #{payComStime},
+      </if>
+      <if test="ticketNum != null" >
+        #{ticketNum},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime},
+      </if>
+      <if test="salePayId != null" >
+        #{salePayId},
+      </if>
+      <if test="unBillDetailId != null" >
+        #{unBillDetailId},
+      </if>
+      <if test="closeTime != null" >
+        #{closeTime},
+      </if>
+      <if test="rechargeAmount != null" >
+        #{rechargeAmount},
+      </if>
+      <if test="pointsNum != null" >
+        #{pointsNum},
+      </if>
+      <if test="goodsCode != null" >
+        #{goodsCode},
+      </if>
+      <if test="reduceAmount != null" >
+        #{reduceAmount},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sgcc.order.entity.SaleOrder" >
+    update SALE_ORDER
+    <set >
+      <if test="channelCode != null" >
+        CHANNEL_CODE = #{channelCode},
+      </if>
+      <if test="channelName != null" >
+        CHANNEL_NAME = #{channelName},
+      </if>
+      <if test="orderAmount != null" >
+        ORDER_AMOUNT = #{orderAmount},
+      </if>
+      <if test="pointsAmount != null" >
+        POINTS_AMOUNT = #{pointsAmount},
+      </if>
+      <if test="couponAmount != null" >
+        COUPON_AMOUNT = #{couponAmount},
+      </if>
+      <if test="walletAmount != null" >
+        WALLET_AMOUNT = #{walletAmount},
+      </if>
+      <if test="powerWalducAmount != null" >
+        POWER_WALDUC_AMOUNT = #{powerWalducAmount},
+      </if>
+      <if test="payAmount != null" >
+        PAY_AMOUNT = #{payAmount},
+      </if>
+      <if test="shipStatus != null" >
+        SHIP_STATUS = #{shipStatus},
+      </if>
+      <if test="orderStatus != null" >
+        ORDER_STATUS = #{orderStatus},
+      </if>
+      <if test="payStatus != null" >
+        PAY_STATUS = #{payStatus},
+      </if>
+      <if test="payOrderId != null" >
+        PAY_ORDER_ID = #{payOrderId},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId},
+      </if>
+      <if test="userType != null" >
+        USER_TYPE = #{userType},
+      </if>
+      <if test="chkStat != null" >
+        CHK_STAT = #{chkStat},
+      </if>
+      <if test="saleRtnNo != null" >
+        SALE_RTN_NO = #{saleRtnNo},
+      </if>
+      <if test="completeTime != null" >
+        COMPLETE_TIME = #{completeTime},
+      </if>
+      <if test="payComStime != null" >
+        PAY_COM_STIME = #{payComStime},
+      </if>
+      <if test="ticketNum != null" >
+        TICKET_NUM = #{ticketNum},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime},
+      </if>
+      <if test="salePayId != null" >
+        SALE_PAY_ID = #{salePayId},
+      </if>
+      <if test="unBillDetailId != null" >
+        UN_BILL_DETAIL_ID = #{unBillDetailId},
+      </if>
+      <if test="closeTime != null" >
+        CLOSE_TIME = #{closeTime},
+      </if>
+      <if test="rechargeAmount != null" >
+        RECHARGE_AMOUNT = #{rechargeAmount},
+      </if>
+      <if test="pointsNum != null" >
+        POINTS_NUM = #{pointsNum},
+      </if>
+      <if test="goodsCode != null" >
+        GOODS_CODE = #{goodsCode},
+      </if>
+      <if test="reduceAmount != null" >
+        REDUCE_AMOUNT = #{reduceAmount},
+      </if>
+    </set>
+    where SALE_ID = #{saleId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sgcc.order.entity.SaleOrder" >
+    update SALE_ORDER
+    set CHANNEL_CODE = #{channelCode},
+      CHANNEL_NAME = #{channelName},
+      ORDER_AMOUNT = #{orderAmount},
+      POINTS_AMOUNT = #{pointsAmount},
+      COUPON_AMOUNT = #{couponAmount},
+      WALLET_AMOUNT = #{walletAmount},
+      POWER_WALDUC_AMOUNT = #{powerWalducAmount},
+      PAY_AMOUNT = #{payAmount},
+      SHIP_STATUS = #{shipStatus},
+      ORDER_STATUS = #{orderStatus},
+      PAY_STATUS = #{payStatus},
+      PAY_ORDER_ID = #{payOrderId},
+      CREATE_TIME = #{createTime},
+      USER_ID = #{userId},
+      USER_TYPE = #{userType},
+      CHK_STAT = #{chkStat},
+      SALE_RTN_NO = #{saleRtnNo},
+      COMPLETE_TIME = #{completeTime},
+      PAY_COM_STIME = #{payComStime},
+      TICKET_NUM = #{ticketNum},
+      UPDATE_TIME = #{updateTime},
+      SALE_PAY_ID = #{salePayId},
+      UN_BILL_DETAIL_ID = #{unBillDetailId},
+      CLOSE_TIME = #{closeTime},
+      RECHARGE_AMOUNT = #{rechargeAmount},
+      POINTS_NUM = #{pointsNum},
+      GOODS_CODE = #{goodsCode},
+      REDUCE_AMOUNT = #{reduceAmount}
+    where SALE_ID = #{saleId}
+  </update>
+</mapper>
