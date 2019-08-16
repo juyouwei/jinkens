@@ -4,7 +4,6 @@ import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,10 +14,8 @@ import org.springframework.data.redis.connection.RedisNode;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-
 import com.sgcc.BreakPointApplication;
 import com.sgcc.common.component.RedisDomain;
-
 import redis.clients.jedis.JedisPoolConfig;
 import sun.misc.BASE64Decoder;
 @Configuration

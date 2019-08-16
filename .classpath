@@ -41,7 +41,7 @@
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/classmate-1.3.1.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/commons-beanutils-1.8.0.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/commons-codec-1.6.jar"/>
-	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/commons-collections-3.2.jar" sourcepath="C:/Users/dell/AppData/Local/Temp/.org.sf.feeling.decompiler1565857708633/source/commons-collections-3.2-sources.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/commons-configuration-1.8.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/commons-jxpath-1.3.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/commons-lang-2.6.jar"/>
