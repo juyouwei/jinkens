@@ -1,0 +1,14 @@
+#!/bin/sh
+cd C:\Users\dell\Desktop\
+
+#得到进程ID pid，kill该进程
+pid=`cat /root/home/program/pro_java/pid`
+if [ -n "$pid" ]
+then
+    echo "kill -9 的pid:" $pid
+    kill -9 $pid
+fi
+
+#执行jar，并将进程挂起，保存进程ID到 pid文件
+echo "Execute shell Finish"
+BUILD_ID=dontKillMe nohup java -jar /root/home/program/pro_java/jenkins_jar.jar  & echo "$!" > pid
