@@ -2,12 +2,10 @@ package com.sgcc;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
 import org.apache.commons.lang3.StringUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import sun.misc.BASE64Decoder;
 @SpringBootApplication(scanBasePackages={"com.sgcc"})
 @MapperScan(basePackages={"com.sgcc.*.mapper","com.sgcc.**.mapper"})

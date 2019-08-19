@@ -9,7 +9,6 @@ D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\component\mq
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\schedule\job\xxl\jobhandler\ShardingJobHandler.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\config\DateFormatConfig.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\config\DataSourceConfig.java
-D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\main\BaseDecodeTest.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\serializer\CustomNullStringSerializerProvider.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\serializer\EmptyStringSerializer.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\order\service\impl\OrderServiceImpl.java
@@ -27,14 +26,12 @@ D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\component\mq
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\exception\BaseException.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\serializer\BigDecimalFormat.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\schedule\job\xxl\XxlJobConfig.java
-D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\main\MyMap.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\utils\mybatis\StartUp.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\web\TimeFormatAspectj.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\utils\SeqGeneratorLua.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\component\mq\MQMessageHandler.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\config\WebRestApiConfig.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\component\mq\MQProducer.java
-D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\main\MqConsumer.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\main\MyRSA.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\component\TypeAliasesPackageScanner.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\utils\mybatis\MyCommentGenerator.java
@@ -64,11 +61,9 @@ D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\main\Clibrary.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\order\mapper\JyRechargeRegMainMapper.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\config\RedisConfig.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\utils\RedisUtil.java
-D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\main\TestRSA.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\CommonEnum.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\exception\BaseExceptionEnum.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\web\constant\CodeConstant.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\common\component\mq\service\ConsumerTransactionMessageService.java
-D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\main\MqProducer.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\order\entity\SaleOrder.java
 D:\eclipse\workspace\break-point_test\src\main\java\com\sgcc\schedule\job\xxl\jobhandler\DemoJobHandler.java
