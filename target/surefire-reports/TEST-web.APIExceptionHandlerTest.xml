@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="web.APIExceptionHandlerTest" time="0.156" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="web.APIExceptionHandlerTest" time="0.108" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_162\jre\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="D:\eclipse\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2760852603984744380.tmp"/>
+    <property name="classworlds.conf" value="D:\eclipse\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8922050190054007441.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_162\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_162/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_162/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_162/bin/../jre/lib/amd64;%C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_162\bin;D:\gradle-3.3\bin;D:\apache-maven-3.5.4\bin;D:\;C:\Windows\system32;C:\Program Files\TortoiseGit\bin;C:\Users\dell\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\dell\AppData\Local\Programs\Python\Python37\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\dell\AppData\Roaming\npm;D:\fiddler;C:\Users\dell\Git\cmd;D:\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -60,5 +60,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testAPIExceptionHandler" classname="web.APIExceptionHandlerTest" time="0.156"/>
+  <testcase name="testAPIExceptionHandler" classname="web.APIExceptionHandlerTest" time="0.108"/>
 </testsuite>

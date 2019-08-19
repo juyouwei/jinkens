@@ -232,9 +232,10 @@
 	<defaultGoal>compile</defaultGoal>
 		<finalName>break-point_test</finalName>
 		<plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
+		 <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                 <configuration>
                      <source>1.8</source>
 			         <target>1.8</target>
                 </configuration>
