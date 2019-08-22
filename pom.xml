@@ -205,6 +205,11 @@
 			<artifactId>hessian</artifactId>
 			<version>4.0.51</version>
 		</dependency>
+		 <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<finalName>break-point_test</finalName>

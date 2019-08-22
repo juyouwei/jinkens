@@ -54,7 +54,6 @@
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/DmJdbcDriver.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/ezmorph-1.0.6.jar"/>
-	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/fastjson-1.1.38.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/freemarker-2.3.25-incubating.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/geronimo-jta_1.1_spec-1.1.1.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/governator-1.12.10.jar"/>
@@ -123,7 +122,6 @@
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/logger.api-0.2.3.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/minlog-1.3.0.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/mockito-core-1.10.19.jar"/>
-	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/mysql-connector-java-5.1.38.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/netty-buffer-4.0.27.Final.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/netty-codec-4.0.27.Final.jar"/>
 	<classpathentry kind="lib" path="D:/card/osg-main/uaplib/netty-codec-http-4.0.27.Final.jar"/>
