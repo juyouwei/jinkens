@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration>
+<configuration scan="true" packagingData="true" debug="false">
+
+    <springProperty name="logDir" source="log.dir" defaultValue="${HOME}/logs/break-point_test"/>
+    <springProperty name="logLevel" source="log.level" defaultValue="DEBUG"/>
+
+    <springProfile name="!production">
+        <!-- 控制台 -->
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%yellow(%d{yyyy-MM-dd HH:mm:ss.SSS}) %green([%thread]) %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
+            </encoder>
+        </appender>
+        <appender name="FILE-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <append>true</append>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${logDir}/stdout.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <maxHistory>60</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}:%line - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+    </springProfile>
+
+    <springProfile name="production">
+        <!-- 控制台 -->
+        <appender name="STDOUT" class="ch.qos.logback.core.helpers.NOPAppender" />
+
+        <appender name="FILE-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <append>true</append>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${logDir}/stdout.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <maxHistory>60</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}:%line - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+    </springProfile>
+
+    <!-- Aliyun MQ Appender -->
+    <appender name="ALIYUN-MQ-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logDir}/3rd_aliyun_mq.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--Aliyun MQ Logger -->
+    <logger name="aliyun-mq-logger" level="${logLevel}" addtivity="false">
+        <appender-ref ref="ALIYUN-MQ-APPENDER"/>
+    </logger>
+
+    <logger name="com.sgcc" level="${logLevel}"/>
+    <logger name="com.xxl.job" level="WARN"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE-APPENDER"/>
+    </root>
+
+</configuration>
